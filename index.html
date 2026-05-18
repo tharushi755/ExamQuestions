@@ -20,6 +20,18 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
+        /* ප්‍රශ්න අඩංගු ප්‍රධාන container එකට counter එකක් ලබාදීම */
+.container, body {
+    counter-reset: question-counter;
+}
+
+/* සෑම ප්‍රශ්නයක් ඉදිරියටම ස්වයංක්‍රීයව අංකය එකතු කිරීම */
+.question-text::before {
+    counter-increment: question-counter;
+    content: counter(question-counter) ". ";
+    font-weight: bold;
+    color: #1e4620; /* ඔබට කැමති වර්ණයක් */
+}
         h1 {
             color: #1e4620;
             text-align: center;
